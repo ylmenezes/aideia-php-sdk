@@ -1,0 +1,1 @@
+# SDK para API Aideia em PHP

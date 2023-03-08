@@ -1,0 +1,32 @@
+{
+    "CONFIG": {
+        "URL_QA": "https://apiclink.aideia.com/api",
+        "URL_PRD": "https://apiclink.aideia.com/api"
+    },
+    "ENDPOINTS": {
+        "auth": {
+            "route": "/login",
+            "method": "POST"
+        },
+        "getProdutos": {
+            "route": "/produtos",
+            "method": "GET"
+        },
+        "detailProduto": {
+            "route": "/produto/:uid",
+            "method": "GET"
+        },
+        "updateProduto": {
+            "route": "/produto/:uid",
+            "method": "PUT"
+        },
+        "deleteProduto": {
+            "route": "/produto/:uid",
+            "method": "DELETE"
+        },
+        "createProduto": {
+            "route": "/produtos",
+            "method": "POST"
+        }
+    }
+}
