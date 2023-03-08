@@ -87,12 +87,29 @@ class Aideia
     }
 
     /**
+     * Endpoind de atualizar o produto
+     * @return object
+     */
+    public function updateProduto($uid, $data): object
+    {
+
+        return $this->request->send('updateProduto', $data, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
+            ]
+        ]);
+    }
+
+    /**
      * Endpoind para cadastrar um novo produto
      * @return object
      */
-    public function createProduto($aProduto): object
+    public function createProduto($data): object
     {
-        return $this->request->send('createProduto', $aProduto, [
+        return $this->request->send('createProduto', $data, [
             'headers' => [
                 "Authorization:Bearer $this->token",
             ]
