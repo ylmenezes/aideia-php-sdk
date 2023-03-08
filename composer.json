@@ -1,6 +1,7 @@
 {
-  "name": "ylmenezes/aideia-sdk-php",
-  "description": "API SDK PHP",
+  "name": "ylmenezes/aideia-php-sdk",
+  "description": "Aideia SDK PHP",
+  "type": "project",
   "require": {
     "php": ">=7.2"
   },
