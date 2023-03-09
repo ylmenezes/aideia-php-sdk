@@ -133,6 +133,49 @@ class Aideia
     }
 
     /**
+     * Endpoind para listar as categorias 
+     * @return object
+     */
+    public function getCategorias(): object
+    {
+        return $this->request->send('getCategorias', null, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para criar as categorias
+     * @return object
+     */
+    public function updateCategoria($uid, $data): object
+    {
+        return $this->request->send('updateCategoria', $data, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
+            ]
+        ]);
+    }
+
+    
+    /**
+     * Endpoind para criar as categorias
+     * @return object
+     */
+    public function createCategoria($data): object
+    {
+        return $this->request->send('createCategoria', $data, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ]
+        ]);
+    }
+
+    /**
      * retorna o token de autenticação das requisições
      * @return string 
      */

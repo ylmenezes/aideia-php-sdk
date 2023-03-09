@@ -27,6 +27,18 @@
         "createProduto": {
             "route": "/produtos",
             "method": "POST"
+        },
+        "getCategorias": {
+            "route": "/categorias",
+            "method": "GET"
+        },
+        "createCategoria": {
+            "route": "/categorias",
+            "method": "POST"
+        },
+        "updateCategoria": {
+            "route": "/categoria/:uid",
+            "method": "PUT"
         }
     }
 }
