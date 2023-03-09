@@ -39,6 +39,22 @@
         "updateCategoria": {
             "route": "/categoria/:uid",
             "method": "PUT"
+        },
+        "getImagemProduto": {
+            "route": "/imagens/produto/:uid",
+            "method": "GET"
+        },
+        "detailImagem": {
+            "route": "/imagem/:uid",
+            "method": "GET"
+        },
+        "createImagens": {
+            "route": "/imagens/produtos",
+            "method": "POST"
+        },
+        "deleteImagens": {
+            "route": "/imagem/:uid",
+            "method": "DELETE"
         }
     }
 }

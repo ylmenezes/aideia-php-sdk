@@ -161,7 +161,6 @@ class Aideia
         ]);
     }
 
-    
     /**
      * Endpoind para criar as categorias
      * @return object
@@ -171,6 +170,67 @@ class Aideia
         return $this->request->send('createCategoria', $data, [
             'headers' => [
                 "Authorization:Bearer $this->token",
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para criar as imagens
+     * @return object
+     */
+    public function createImagens($data): object
+    {
+        return $this->request->send('createImagens', $data, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para excluir as imagens
+     * @return object
+     */
+    public function deleteImagens($uid): object
+    {
+        return $this->request->send('deleteImagens', null, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para detalhar as imagens
+     * @return object
+     */
+    public function detailImagem($uid): object
+    {
+        return $this->request->send('detailImagem', null, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para listar as imagens de um produto
+     * @return object
+     */
+    public function getImagemProduto($uid): object
+    {
+        return $this->request->send('getImagemProduto', null, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
             ]
         ]);
     }
