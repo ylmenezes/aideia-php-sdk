@@ -179,7 +179,7 @@ class Aideia
      * Endpoind para detalhar a categoria
      * @return object
      */
-    public function detailCategoria($uid, $data): object
+    public function detailCategoria($uid): object
     {
         return $this->request->send('detailCategoria', $data, [
             'headers' => [
