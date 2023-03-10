@@ -181,7 +181,7 @@ class Aideia
      */
     public function detailCategoria($uid): object
     {
-        return $this->request->send('detailCategoria', $data, [
+        return $this->request->send('detailCategoria', null, [
             'headers' => [
                 "Authorization:Bearer $this->token",
             ],
