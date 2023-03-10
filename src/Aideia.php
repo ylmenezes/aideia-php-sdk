@@ -60,13 +60,11 @@ class Aideia
     public function getProdutos(): array
     {
 
-        $oProdutos = $this->request->send('getProdutos', null, [
+        return $this->request->send('getProdutos', null, [
             'headers' => [
                 "Authorization:Bearer $this->token",
             ]
         ]);
-
-        return $oProdutos->data;
     }
 
     /**
@@ -141,6 +139,22 @@ class Aideia
         return $this->request->send('getCategorias', null, [
             'headers' => [
                 "Authorization:Bearer $this->token",
+            ]
+        ]);
+    }
+
+    /**
+     * Endpoind para listar os proutos pela categoria 
+     * @return object
+     */
+    public function produtoCategoria($uid): object
+    {
+        return $this->request->send('produtosCategorias', null, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
             ]
         ]);
     }
