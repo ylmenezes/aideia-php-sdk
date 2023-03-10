@@ -57,7 +57,7 @@ class Aideia
      * Endpoind de listar os produtos
      * @return array
      */
-    public function getProdutos(): array
+    public function getProdutos(): object
     {
 
         return $this->request->send('getProdutos', null, [
