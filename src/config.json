@@ -44,6 +44,10 @@
             "route": "/categoria/:uid",
             "method": "PUT"
         },
+        "detailCategoria": {
+            "route": "/categoria/:uid",
+            "method": "GET"
+        },
         "getImagemProduto": {
             "route": "/imagens/produto/:uid",
             "method": "GET"

@@ -176,6 +176,22 @@ class Aideia
     }
 
     /**
+     * Endpoind para detalhar a categoria
+     * @return object
+     */
+    public function detailCategoria($uid, $data): object
+    {
+        return $this->request->send('detailCategoria', $data, [
+            'headers' => [
+                "Authorization:Bearer $this->token",
+            ],
+            'params' => [
+                'uid' => $uid
+            ]
+        ]);
+    }
+
+    /**
      * Endpoind para criar as categorias
      * @return object
      */
