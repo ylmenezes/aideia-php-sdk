@@ -21,12 +21,12 @@ class Request
     {
         try {
 
-            if( empty($this->endpoints[$endpoint]['route']) ){
+            if (empty($this->endpoints[$endpoint]['route'])) {
                 throw new AideiaException('Endpoint não é válido.', 404);
             }
 
             $route = $this->endpoints[$endpoint]['route'];
-            if (isset($requestOptions['params'])){
+            if (isset($requestOptions['params'])) {
                 $route = Utils::getRoute($this->endpoints[$endpoint]['route'], $requestOptions['params']);
             }
 
@@ -35,8 +35,8 @@ class Request
             curl_setopt($exec, CURLOPT_URL,  $this->url . $route);
 
             curl_setopt($exec, CURLOPT_HTTPHEADER, $this->headers);
-            if ($requestOptions  !== null && isset($requestOptions['headers'])){
-                $this->headers = array_merge($this->headers,$requestOptions['headers']);
+            if ($requestOptions  !== null && isset($requestOptions['headers'])) {
+                $this->headers = array_merge($this->headers, $requestOptions['headers']);
                 curl_setopt($exec, CURLOPT_HTTPHEADER, $this->headers);
             }
 
@@ -57,13 +57,20 @@ class Request
             $error = curl_error($exec);
             curl_close($exec);
 
-            if (empty($error)):
+            if (empty($error)) :
                 $return = json_decode($response);
-                if($return->code === 200)
-                    return $return;
-                else
-                    throw new AideiaException($return->message, $return->code);
-            else:
+
+                if (isset($return->code)) {
+                    if ($return->code === 200)
+                        return $return;
+                    else
+                        throw new AideiaException($return->message, $return->code);
+                } else {
+                    throw new AideiaException('Erro desconhecido.', 400);
+                }
+
+
+            else :
                 throw new AideiaException($error, 400);
             endif;
         } catch (AideiaException $e) {
